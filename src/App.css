@@ -1,0 +1,240 @@
+/*------ USING POPPIN and  BELANOSIMA FONT*/
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Poppins:wght@500;700&display=swap');
+/* font-family: 'Belanosima', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+/*----- GLOBAL VARIAABLES for non repetting myself for repeatable code -----*/
+:root {
+  --color-body: #e8f3f8;
+  --color-disabled: #d2e7f1;
+  --color-text: #061b25;
+  --color-text-disabled: #77b8d4;
+
+  --global-radius: 6px;
+  --global-transition: all 0.2s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+body {
+  font-family: 'Belanosima', sans-serif;
+  background-color: rgb(178, 211, 223);
+}
+
+/*---------- Styling Container  -----------*/
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5% auto;
+  padding: 5px 0;
+  border-radius: 10px;
+  width: 50%;
+  background-color: var(--color-body);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+}
+.heading img {
+  width: 40px;
+  height: 40px;
+  margin: 0 15px 13px 0;
+}
+h1 {
+  font-size: 3rem;
+  padding: 10px 0 20px 0;
+  background: -webkit-linear-gradient(#bd8282, #554c4c);
+  text-align: center;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*--------- style all TODO form and button Which is inside in one div  ----*/
+.todo-add {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: #efe4e7;
+  width: 90%;
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+
+.todo-add img {
+  width: 30px;
+  height: 30px;
+}
+
+/*--------- FORM , INPUT AND BUTTON STYLE  ---------*/
+form input[type='text'] {
+  width: 80%;
+  height: 45px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  padding: 5px;
+  background-color: #efe4e7;
+}
+
+form button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+form button i {
+  font-size: 28px;
+  color: #4057c6;
+  cursor: pointer;
+  border-bottom: none;
+}
+
+/*--------- Stats Details ----------*/
+.stats {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 16px;
+  gap: 1rem;
+}
+
+.stats li span:nth-child(1) {
+  background-color: #212d32;
+  color: white;
+  padding: 0.6rem;
+  border-top-left-radius: var(--global-radius);
+  border-bottom-left-radius: var(--global-radius);
+}
+
+.stats li span:nth-child(2) {
+  background-color: #77b8d4;
+  color: white;
+  position: relative;
+  right: 5px;
+  padding: 0.6rem;
+  margin-left: 0;
+  border-top-right-radius: var(--global-radius);
+  border-bottom-right-radius: var(--global-radius);
+}
+
+/*-------- Check BOX Style  ---------*/
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+}
+
+/*----------- TODO LIST  LI -----------*/
+.todos {
+  margin: 2rem 0 1rem 0;
+  width: 90%;
+}
+
+.todos li {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 1.5rem 1rem;
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todos li div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.todos li.complete {
+  background-color: var(--color-disabled);
+  text-decoration: line-through;
+  color: var(--color-text-disabled);
+}
+
+.todos li button {
+  border: none;
+  padding: 0.25rem;
+  display: grid;
+  border-radius: 100%;
+  place-content: center;
+  color: #e84646ec;
+  background-color: transparent;
+  transition: var(--global-transition);
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.todos li button:hover {
+  color: #d13c3cec;
+}
+/*------- Clear all and Complete all Task ---------------*/
+.clear-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  width: 90%;
+}
+
+.clear-task li button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #bdb0b4;
+  cursor: pointer;
+  transition: val(--global-transition);
+}
+
+.clear-task li button:hover {
+  color: #8b5757;
+}
+
+/* -------- FOOTER ----------*/
+footer {
+  margin: 10px auto;
+}
+
+footer a {
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+footer a:hover {
+  color: rgb(205, 50, 50);
+}
+
+/* Adding media query to make responsive*/
+@media (max-width: 768px) {
+  .container {
+    width: 85%;
+  }
+
+  .todo-add {
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    width: 93%;
+  }
+  .stats {
+    gap: 12px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
